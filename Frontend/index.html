@@ -14,17 +14,14 @@
 <body class="bg-blue-100 min-h-screen justify-center p-40">
   <h1 class="text-4xl text-center mb-4">MoneyPrinter</h1>
   <p class="text-center text-gray-700">
-    This Application is intended to automate the creation of YouTube Shorts.
+    This Application is intended to automate the creation and uploads of YouTube Shorts.
   </p>
 
-  <div class="flex justify-center mt-8" style="flex-direction: column;align-items: center;">
-    <div class="flex flex-col space-y-4">
-      <label for="videoSubject" class="text-blue-600">Subject</label>
-      <input type="text" name="videoSubject" id="videoSubject"
-        class="border-2 border-blue-300 p-2 rounded-md focus:outline-none focus:border-blue-500" />
+  <div class="flex justify-center mt-8">
+    <div class="max-w-xl flex flex-col space-y-4 w-full">
       <label for="voice" class="text-blue-600">Voice</label>
       <select name="voice" id="voice"
-        class="border-2 border-blue-300 p-2 rounded-md focus:outline-none focus:border-blue-500">
+        class="w-min border-2 border-blue-300 p-2 rounded-md focus:outline-none focus:border-blue-500">
         <option value="en_us_ghostface">Ghost Face</option>
         <option value="en_us_chewbacca">Chewbacca</option>
         <option value="en_us_c3po">C3PO</option>
@@ -67,237 +64,181 @@
         <option value="en_male_funny">wacky</option>
         <option value="en_female_emotional">peaceful</option>
       </select>
-
-      <button id="addScript" class="bg-blue-500 hover:bg-blue-700 duration-100 linear text-white px-4 py-2 rounded-md">
-        Add script
-      </button>
-
-      <body class="bg-blue-100 min-h-screen justify-center p-40">
-        <h1 class="text-4xl text-center mb-4">MoneyPrinter</h1>
-        <p class="text-center text-gray-700">
-          This Application is intended to automate the creation and uploads of YouTube Shorts.
-        </p>
-
-        <div class="flex justify-center mt-8">
-          <div class="max-w-xl flex flex-col space-y-4 w-full">
-            <label for="voice" class="text-blue-600">Voice</label>
-            <select name="voice" id="voice"
-              class="w-min border-2 border-blue-300 p-2 rounded-md focus:outline-none focus:border-blue-500">
-              <option value="en_us_ghostface">Ghost Face</option>
-              <option value="en_us_chewbacca">Chewbacca</option>
-              <option value="en_us_c3po">C3PO</option>
-              <option value="en_us_stitch">Stitch</option>
-              <option value="en_us_stormtrooper">Stormtrooper</option>
-              <option value="en_us_rocket">Rocket</option>
-              <option value="en_au_001">English AU - Female</option>
-              <option value="en_au_002">English AU - Male</option>
-              <option value="en_uk_001">English UK - Male 1</option>
-              <option value="en_uk_003">English UK - Male 2</option>
-              <option value="en_us_001">English US - Female (Int. 1)</option>
-              <option value="en_us_002">English US - Female (Int. 2)</option>
-              <option value="en_us_006">English US - Male 1</option>
-              <option value="en_us_007">English US - Male 2</option>
-              <option value="en_us_009">English US - Male 3</option>
-              <option value="en_us_010">English US - Male 4</option>
-              <option value="fr_001">French - Male 1</option>
-              <option value="fr_002">French - Male 2</option>
-              <option value="de_001">German - Female</option>
-              <option value="de_002">German - Male</option>
-              <option value="es_002">Spanish - Male</option>
-              <option value="es_mx_002">Spanish MX - Male</option>
-              <option value="br_001">Portuguese BR - Female 1</option>
-              <option value="br_003">Portuguese BR - Female 2</option>
-              <option value="br_004">Portuguese BR - Female 3</option>
-              <option value="br_005">Portuguese BR - Male</option>
-              <option value="id_001">Indonesian - Female</option>
-              <option value="jp_001">Japanese - Female 1</option>
-              <option value="jp_003">Japanese - Female 2</option>
-              <option value="jp_005">Japanese - Female 3</option>
-              <option value="jp_006">Japanese - Male</option>
-              <option value="kr_002">Korean - Male 1</option>
-              <option value="kr_003">Korean - Female</option>
-              <option value="kr_004">Korean - Male 2</option>
-              <option value="en_female_f08_salut_damour">Alto</option>
-              <option value="en_male_m03_lobby">Tenor</option>
-              <option value="en_female_f08_warmy_breeze">Warmy Breeze</option>
-              <option value="en_male_m03_sunshine_soon">Sunshine Soon</option>
-              <option value="en_male_narration">narrator</option>
-              <option value="en_male_funny">wacky</option>
-              <option value="en_female_emotional">peaceful</option>
-            </select>
-            <label for="videoSubject" class="text-blue-600">Subject</label>
-            <textarea rows="3" type="text" name="videoSubject" id="videoSubject"
-              class="border-2 border-blue-300 p-2 rounded-md focus:outline-none focus:border-blue-500"></textarea>
-            <label for="youtubeUploadToggle" class="flex items-center text-blue-600">
-              <input type="checkbox" name="youtubeUploadToggle" id="youtubeUploadToggle" class="mr-2" />
-              Automate YouTube Uploads
-            </label>
-            <button id="generateButton"
-              class="bg-blue-500 hover:bg-blue-700 duration-100 linear text-white px-4 py-2 rounded-md">
-              Generate
-            </button>
-            <button id="cancelButton"
-              class="bg-red-500 hover:bg-red-700 duration-100 linear text-white px-4 py-2 rounded-md hidden">
-              Cancel
-            </button>
-          </div>
-        </div>
-        <br>
-        <div class="flex justify-center mt-8" id="scriptInputDiv" style="display: none;">
-          <textarea name="videoScript" id="videoScript" cols="30" rows="10"
-            class="border-2 border-blue-300 p-2 rounded-md focus:outline-none focus:border-blue-500" style="
-        width:40vw;height:20vh"></textarea>
-        </div>
-        <br>
-        <div class="flex flex-col space-y-4">
-          <button id="generateButton"
-            class="bg-blue-500 hover:bg-blue-700 duration-100 linear text-white px-4 py-2 rounded-md">
-            Generate
-          </button>
-          <button id="cancelButton"
-            class="bg-red-500 hover:bg-red-700 duration-100 linear text-white px-4 py-2 rounded-md hidden">
-            Cancel
-          </button>
-        </div>
-    </div>
-
-    <footer class="flex justify-center mt-8">
-      <div class="flex flex-col space-y-4">
-        <p class="text-center text-gray-700">
-          Made with ❤️ by
-          <a class="text-blue-600" target="href" href="https://github.com/FujiwaraChoki">
-            Fuji Codes
-          </a>
-        </p>
+      <label for="videoSubject" class="text-blue-600">Subject</label>
+      <textarea rows="3" type="text" name="videoSubject" id="videoSubject"
+        class="border-2 border-blue-300 p-2 rounded-md focus:outline-none focus:border-blue-500"></textarea>
+      <label for="youtubeUploadToggle" class="flex items-center text-blue-600">
+        <input type="checkbox" name="youtubeUploadToggle" id="youtubeUploadToggle" class="mr-2" />
+        Automate YouTube Uploads
+      </label>
+      <label for="videoScriptToggle" class="flex items-center text-blue-600">
+        <input type="checkbox" name="videoScriptToggle" id="videoScriptToggle" class="mr-2" />
+        Custom video script
+      </label>
+      <div class="flex justify-center mt-8" id="scriptInputDiv" style="display: block;">
+        <textarea name="videoScript" id="videoScript" cols="30" rows="10"
+          class="border-2 border-blue-300 p-2 rounded-md focus:outline-none focus:border-blue-500" style="
+        width:40vw;height:20vh;display: none;"></textarea>
       </div>
-    </footer>
+      <br>
+      <button id="generateButton"
+        class="bg-blue-500 hover:bg-blue-700 duration-100 linear text-white px-4 py-2 rounded-md">
+        Generate
+      </button>
+      <button id="cancelButton"
+        class="bg-red-500 hover:bg-red-700 duration-100 linear text-white px-4 py-2 rounded-md hidden">
+        Cancel
+      </button>
+    </div>
+  </div>
 
-    <script>
-      const videoSubject = document.querySelector("#videoSubject");
-      const voice = document.querySelector("#voice");
-      const generateButton = document.querySelector("#generateButton");
-      const cancelButton = document.querySelector("#cancelButton");
-      const videoScript = document.querySelector("#videoScript");
+  </div>
 
-      const cancelGeneration = () => {
-        console.log("Canceling generation...");
-        // Send request to /cancel
-        fetch("http://localhost:8080/api/cancel", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
+  <footer class="flex justify-center mt-8">
+    <div class="flex flex-col space-y-4">
+      <p class="text-center text-gray-700">
+        Made with ❤️ by
+        <a class="text-blue-600" target="href" href="https://github.com/FujiwaraChoki">
+          Fuji Codes
+        </a>
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    const videoSubject = document.querySelector("#videoSubject");
+    const voice = document.querySelector("#voice");
+    const generateButton = document.querySelector("#generateButton");
+    const cancelButton = document.querySelector("#cancelButton");
+    const videoScript = document.querySelector("#videoScript");
+
+    const cancelGeneration = () => {
+      console.log("Canceling generation...");
+      // Send request to /cancel
+      fetch("http://localhost:8080/api/cancel", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          alert(data.message);
+          console.log(data);
         })
-          .then((response) => response.json())
-          .then((data) => {
-            alert(data.message);
-            console.log(data);
-          })
-          .catch((error) => {
-            alert("An error occurred. Please try again later.");
-            console.log(error);
-          });
+        .catch((error) => {
+          alert("An error occurred. Please try again later.");
+          console.log(error);
+        });
 
-        // Hide cancel button
-        cancelButton.classList.add("hidden");
+      // Hide cancel button
+      cancelButton.classList.add("hidden");
 
-        // Enable generate button
-        generateButton.disabled = false;
-        generateButton.classList.remove("hidden");
+      // Enable generate button
+      generateButton.disabled = false;
+      generateButton.classList.remove("hidden");
+    };
+
+    const generateVideo = () => {
+      console.log("Generating video...");
+      // Disable button and change text
+      generateButton.disabled = true;
+      generateButton.classList.add("hidden");
+
+      // Show cancel button
+      cancelButton.classList.remove("hidden");
+
+      // Get values from input fields
+      const videoSubjectValue = videoSubject.value;
+      const voiceValue = voice.value;
+      const videoScriptValue = videoScript.value;
+      const url = "http://localhost:8080/api/generate";
+
+      // Construct data to be sent to the server
+      const data = {
+        videoSubject: videoSubjectValue,
+        voice: voiceValue,
+        videoScript: videoScriptValue,
       };
 
-      const generateVideo = () => {
-        console.log("Generating video...");
-        // Disable button and change text
-        generateButton.disabled = true;
-        generateButton.classList.add("hidden");
+      // Send the actual request to the server
+      fetch(url, {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+          alert(data.message);
+          // Hide cancel button after generation is complete
+          generateButton.disabled = false;
+          cancelButton.classList.add("hidden");
+          const generateVideo = () => {
+            console.log("Generating video...");
+            // Disable button and change text
+            generateButton.disabled = true;
+            generateButton.classList.add("hidden");
 
-        // Show cancel button
-        cancelButton.classList.remove("hidden");
+            // Show cancel button
+            cancelButton.classList.remove("hidden");
 
-        // Get values from input fields
-        const videoSubjectValue = videoSubject.value;
-        const voiceValue = voice.value;
-        const videoScriptValue = videoScript.value;
-        const url = "http://localhost:8080/api/generate";
+            // Get values from input fields
+            const videoSubjectValue = videoSubject.value;
+            const voiceValue = voice.value;
+            // Get value from toggle: automated youtube upload
+            const youtubeUpload = document.querySelector("#youtubeUploadToggle").checked;
 
-        // Construct data to be sent to the server
-        const data = {
-          videoSubject: videoSubjectValue,
-          voice: voiceValue,
-          videoScript: videoScriptValue,
-        };
+            const url = "http://localhost:8080/api/generate";
 
-        // Send the actual request to the server
-        fetch(url, {
-          method: "POST",
-          body: JSON.stringify(data),
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "application/json",
-          },
-        })
-          .then((response) => response.json())
-          .then((data) => {
-            console.log(data);
-            alert(data.message);
-            // Hide cancel button after generation is complete
-            generateButton.disabled = false;
-            cancelButton.classList.add("hidden");
-            const generateVideo = () => {
-              console.log("Generating video...");
-              // Disable button and change text
-              generateButton.disabled = true;
-              generateButton.classList.add("hidden");
-
-              // Show cancel button
-              cancelButton.classList.remove("hidden");
-
-              // Get values from input fields
-              const videoSubjectValue = videoSubject.value;
-              const voiceValue = voice.value;
-              // Get value from toggle: automated youtube upload
-              const youtubeUpload = document.querySelector("#youtubeUploadToggle").checked;
-
-              const url = "http://localhost:8080/api/generate";
-
-              // Construct data to be sent to the server
-              const data = {
-                videoSubject: videoSubjectValue,
-                voice: voiceValue,
-                automateYoutubeUpload: youtubeUpload,
-              };
-
-              // Send the actual request to the server
-              fetch(url, {
-                method: "POST",
-                body: JSON.stringify(data),
-                headers: {
-                  "Content-Type": "application/json",
-                  Accept: "application/json",
-                },
-              })
-                .catch((error) => {
-                  alert("An error occurred. Please try again later.");
-                  console.log(error);
-                });
+            // Construct data to be sent to the server
+            const data = {
+              videoSubject: videoSubjectValue,
+              voice: voiceValue,
+              automateYoutubeUpload: youtubeUpload,
             };
 
-            generateButton.addEventListener("click", generateVideo);
-            cancelButton.addEventListener("click", cancelGeneration);
+            // Send the actual request to the server
+            fetch(url, {
+              method: "POST",
+              body: JSON.stringify(data),
+              headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+              },
+            })
+              .catch((error) => {
+                alert("An error occurred. Please try again later.");
+                console.log(error);
+              });
+          };
+        });
+    };
+    generateButton.addEventListener("click", generateVideo);
+    cancelButton.addEventListener("click", cancelGeneration);
 
-            videoSubject.addEventListener("keyup", (event) => {
-              if (event.key === "Enter") {
-                generateVideo();
-              }
-            });
-            document.getElementById('addScript').addEventListener('click', function () {
-              document.getElementById('scriptInputDiv').style.display = 'block';
-            });
-          });
-      };
-    </script>
+    videoSubject.addEventListener("keyup", (event) => {
+      if (event.key === "Enter") {
+        generateVideo();
+      }
+    });
+    document.addEventListener('DOMContentLoaded', (event) => {
+      document.getElementById('videoScriptToggle').addEventListener('change', function () {
+        console.log('changed');
+        var videoScript = document.getElementById('videoScript');
+        if (this.checked) {
+          videoScript.style.display = 'block';
+        } else {
+          videoScript.style.display = 'none';
+        }
+      });
+    });
+
+  </script>
 </body>
 
 </html>

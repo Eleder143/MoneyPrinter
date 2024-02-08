@@ -5,7 +5,7 @@ from typing import Tuple, List
 from termcolor import colored
 
 
-def generate_script(video_subject: str, video_script) -> str:
+def generate_script(video_subject: str, video_script: str) -> str:
     if video_script:
         return video_script
     """
@@ -62,6 +62,7 @@ def generate_script(video_subject: str, video_script) -> str:
 
 
 def get_search_terms(video_subject: str, amount: int, script: str) -> List[str]:
+    print('aaaaaaaayow')
     """
     Generate a JSON-Array of search terms for stock videos,
     depending on the subject of a video.
