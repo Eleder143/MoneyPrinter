@@ -5,7 +5,9 @@ from typing import Tuple, List
 from termcolor import colored
 
 
-def generate_script(video_subject: str) -> str:
+def generate_script(video_subject: str, video_script) -> str:
+    if video_script:
+        return video_script
     """
     Generate a script for a video, depending on the subject of the video.
 

@@ -21,6 +21,7 @@ load_dotenv("../.env")
 SESSION_ID = os.getenv("TIKTOK_SESSION_ID")
 change_settings({"IMAGEMAGICK_BINARY": os.getenv("IMAGEMAGICK_BINARY")})
 
+
 # Initialize Flask
 app = Flask(__name__)
 CORS(app)
@@ -64,7 +65,7 @@ def generate():
             )
 
         # Generate a script
-        script = generate_script(data["videoSubject"])
+        script = generate_script(data["videoSubject"], data["videoScript"])
         voice = data["voice"]
 
         if not voice:

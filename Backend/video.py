@@ -47,7 +47,7 @@ def __generate_subtitles_assemblyai(audio_path: str) -> str:
     Returns:
         str: The generated subtitles
     """
-
+    global ASSEMBLY_AI_API_KEY
     aai.settings.api_key = ASSEMBLY_AI_API_KEY
     transcriber = aai.Transcriber()
     transcript = transcriber.transcribe(audio_path)
@@ -101,7 +101,7 @@ def generate_subtitles(audio_path: str, sentences: List[str], audio_clips: List[
     Returns:
         str: The path to the generated subtitles.
     """
-
+    global ASSEMBLY_AI_API_KEY
     def equalize_subtitles(srt_path: str, max_chars: int = 10) -> None:
         # Equalize subtitles
         srt_equalizer.equalize_srt_file(srt_path, srt_path, max_chars)
