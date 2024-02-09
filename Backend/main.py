@@ -65,7 +65,10 @@ def generate():
             )
 
         # Generate a script
-        script = generate_script(data["videoSubject"], data["videoScript"])
+        if not data["videoScript"]:
+            script = generate_script(data["videoSubject"])
+        else: 
+            script = data["videoScript"]
         voice = data["voice"]
 
         if not voice:
